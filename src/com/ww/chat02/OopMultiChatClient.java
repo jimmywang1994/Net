@@ -11,7 +11,10 @@ public class OopMultiChatClient {
     public static void main(String[] args) throws IOException {
         System.out.println("-----------Client-----------------");
         Socket client = new Socket("localhost", 8888);
-        new Thread(new Send(client)).start();
+        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("请输入用户名");
+        String name=reader.readLine();
+        new Thread(new Send(client,name)).start();
         new Thread(new Receive(client)).start();
     }
 }
