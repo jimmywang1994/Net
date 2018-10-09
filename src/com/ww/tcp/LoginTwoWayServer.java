@@ -36,6 +36,7 @@ public class LoginTwoWayServer {
         }
         System.out.println("一个客户端建立了连接");
 //        System.out.println("收到数据:" + recData);
+        dos.close();
         dis.close();
         server.close();
     }

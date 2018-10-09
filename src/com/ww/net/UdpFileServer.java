@@ -18,7 +18,7 @@ public class UdpFileServer {
     public static void main(String[] args) throws Exception{
         System.out.println("接收方启动中...");
         DatagramSocket server=new DatagramSocket(9999);
-        byte[] container=new byte[1024*60];
+        byte[] container=new byte[1024*200];
         DatagramPacket datagramPacket=new DatagramPacket(container,0,container.length);
         server.receive(datagramPacket);//阻塞式
         byte[] datas=datagramPacket.getData();
